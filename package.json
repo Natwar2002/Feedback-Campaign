@@ -7,7 +7,23 @@
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "_moduleAliases": {
+    "@config": "src/config",
+    "@shared": "src/shared",
+    "@infra": "src/infrastructure",
+    "@routes": "src/routes",
+    "@types": "src/types",
+    "@modules/platform": "src/modules/platform",
+    "@modules/organization": "src/modules/organization",
+    "@modules/workspace": "src/modules/workspace",
+    "@modules/campaign": "src/modules/campaign",
+    "@modules/template": "src/modules/template",
+    "@modules/feedback": "src/modules/feedback"
   },
   "dependencies": {
     "@commitlint/config-conventional": "^20.5.0",
@@ -15,6 +31,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "helmet": "^8.1.0",
     "husky": "^9.1.7",
     "module-alias": "^2.3.4",
     "mongoose": "^9.4.1",
@@ -23,6 +40,8 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
+    "@types/cors": "^2.8.19",
+    "@types/morgan": "^1.9.10",
     "@typescript-eslint/eslint-plugin": "^8.58.1",
     "@typescript-eslint/parser": "^8.58.1",
     "eslint": "^10.2.0",
