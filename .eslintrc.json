@@ -8,6 +8,11 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "import"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -16,11 +21,25 @@
   ],
   "rules": {
     "no-console": "warn",
+    "import/no-relative-parent-imports": "error",
+    "import/no-unresolved": "error",
     "import/order": [
       "warn",
       {
         "groups": ["builtin", "external", "internal"],
-        "newlines-between": "always"
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["@modules/*/*/*"],
+            "message": "Do not import deep inside modules. Use module public API (index.ts)"
+          }
+        ]
       }
     ]
   }

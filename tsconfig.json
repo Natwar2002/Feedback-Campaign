@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@shared/*": ["shared/*"],
+      "@infra/*": ["infrastructure/*"],
+      "@routes/*": ["routes/*"],
+      "@types/*": ["types/*"],
+      "@modules/platform/*": ["modules/platform/*"],
+      "@modules/organization/*": ["modules/organization/*"],
+      "@modules/workspace/*": ["modules/workspace/*"],
+      "@modules/campaign/*": ["modules/campaign/*"],
+      "@modules/template/*": ["modules/template/*"],
+      "@modules/feedback/*": ["modules/feedback/*"],
+    }
+  }
+}

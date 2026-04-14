@@ -16,6 +16,7 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "husky": "^9.1.7",
+    "module-alias": "^2.3.4",
     "mongoose": "^9.4.1",
     "morgan": "^1.10.1",
     "multer": "^2.1.1"
@@ -26,6 +27,7 @@
     "@typescript-eslint/parser": "^8.58.1",
     "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "prettier": "^3.8.2",
     "ts-node": "^10.9.2",
