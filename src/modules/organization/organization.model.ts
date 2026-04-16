@@ -3,8 +3,8 @@ import { Document, Model, Schema } from "mongoose";
 
 export interface IOrganization extends Document {
     name: string;
+    description?: string;
     createdBy: mongoose.Types.ObjectId;
-    slug: string;
     members: {
         member: mongoose.Types.ObjectId;
         role: "ORG_OWNER" | "ORG_ADMIN" | "MEMBER";
@@ -16,15 +16,14 @@ const organizationSchema = new Schema({
         type: String,
         required: true,
     },
+    description: {
+        type: String,
+        default: "",
+    },
     createdBy: {
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true,
-    },
-    slug: {
-        type: String,
-        required: true,
-        unique: true,
     },
     members: [{
         member: {
