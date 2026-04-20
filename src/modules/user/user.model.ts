@@ -24,6 +24,7 @@ const userSchema = new Schema({
         required: false
     },
     platformRole: {
+        type: String,
         enum: ["SuperAdmin", "User"],
         required: true,
         default: "User"

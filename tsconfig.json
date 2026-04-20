@@ -8,6 +8,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "ignoreDeprecations": "6.0",
     "baseUrl": "./src",
     "paths": {
       "@config/*": ["config/*"],
@@ -21,6 +22,7 @@
       "@modules/campaign/*": ["modules/campaign/*"],
       "@modules/template/*": ["modules/template/*"],
       "@modules/feedback/*": ["modules/feedback/*"],
+      "@modules/user/*": ["modules/user/*"]
     }
   },
   "include": ["src"],

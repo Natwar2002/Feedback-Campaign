@@ -23,9 +23,11 @@
     "@modules/workspace": "src/modules/workspace",
     "@modules/campaign": "src/modules/campaign",
     "@modules/template": "src/modules/template",
-    "@modules/feedback": "src/modules/feedback"
+    "@modules/feedback": "src/modules/feedback",
+    "@modules/user": "src/modules/user"
   },
   "dependencies": {
+    "@clerk/express": "^2.1.5",
     "@commitlint/config-conventional": "^20.5.0",
     "@types/express": "^5.0.6",
     "cors": "^2.8.6",
@@ -36,7 +38,8 @@
     "module-alias": "^2.3.4",
     "mongoose": "^9.4.1",
     "morgan": "^1.10.1",
-    "multer": "^2.1.1"
+    "multer": "^2.1.1",
+    "svix": "^1.90.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",

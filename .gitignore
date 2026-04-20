@@ -1,12 +1,82 @@
-# dependencies
+# ─── OS ───────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# ─── Environment & Secrets ────────────────────────────────────
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+
+# ─── Dependencies ─────────────────────────────────────────────
 node_modules/
 
-# env
-.env
+# ─── Yarn ─────────────────────────────────────────────────────
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.cjs
+.pnp.loader.mjs
+# DO NOT ignore .yarn/releases and .yarn/plugins — commit them
 
-# logs
-logs
+# ─── TypeScript ───────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+*.js.map
+
+# ─── Logs ─────────────────────────────────────────────────────
+logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# multer uploads
+# ─── Multer — File Uploads ────────────────────────────────────
 uploads/
+tmp/
+temp/
+
+# ─── ImageKit ─────────────────────────────────────────────────
+# Local image cache or temp files before upload
+.imagekit/
+
+# ─── MongoDB ──────────────────────────────────────────────────
+# Local MongoDB data directory (if running mongo locally)
+data/
+dump/
+*.bson
+
+# ─── Clerk ────────────────────────────────────────────────────
+# Never commit keys — enforced via .env above
+clerk.config.local.ts
+
+# ─── Testing ──────────────────────────────────────────────────
+coverage/
+.nyc_output/
+test-results/
+
+# ─── Editor ───────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Lock files — keep yarn.lock, ignore others ───────────────
+package-lock.json
+pnpm-lock.yaml
