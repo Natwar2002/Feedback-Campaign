@@ -1,1 +1,1 @@
-export const MAX_DB_RETRIES = 3
+export const MAX_DB_RETRIES = 3;

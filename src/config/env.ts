@@ -1,8 +1,8 @@
-import * as dotenv from "dotenv"
+import * as dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
 export const ENV = {
-  PORT: process.env.PORT || "5000",
-  DATABASE_URL: process.env.DATABASE_URL || "",
-}
+  PORT: process.env.PORT || '5000',
+  DATABASE_URL: process.env.DATABASE_URL || '',
+};

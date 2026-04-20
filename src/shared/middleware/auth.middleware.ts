@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import { clerkClient, getAuth } from '@clerk/express';
 import User, { IUser } from '@modules/user/user.model';
 
-
 declare global {
   namespace Express {
     interface Request {
@@ -11,11 +10,7 @@ declare global {
   }
 }
 
-export const requireAuth = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const requireAuth = async (req: Request, res: Response, next: NextFunction) => {
   const { userId } = getAuth(req);
 
   if (!userId) {

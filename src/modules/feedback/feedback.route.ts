@@ -1,5 +1,5 @@
-import { Router } from "express";
+import { Router } from 'express';
 
-const feedbackRouter = Router()
+const feedbackRouter = Router();
 
-export default feedbackRouter
+export default feedbackRouter;

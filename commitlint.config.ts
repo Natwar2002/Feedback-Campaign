@@ -5,11 +5,7 @@ const Configuration: UserConfig = {
 
   rules: {
     // type must be one of these
-    'type-enum': [
-      2,
-      'always',
-      ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore'],
-    ],
+    'type-enum': [2, 'always', ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore']],
 
     // type must not be empty
     'type-empty': [2, 'never'],
@@ -24,11 +20,7 @@ const Configuration: UserConfig = {
     'type-case': [2, 'always', 'lower-case'],
 
     // optional: scope rules
-    'scope-enum': [
-      1,
-      'always',
-      ['auth', 'user', 'campaign', 'workspace', 'common'],
-    ],
+    'scope-enum': [1, 'always', ['auth', 'user', 'campaign', 'workspace', 'common']],
   },
 };
 

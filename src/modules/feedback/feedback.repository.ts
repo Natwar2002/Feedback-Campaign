@@ -1,9 +1,9 @@
-import { Model } from "mongoose";
-import commonRepository from "modules/common/common.repository";
-import { IFeedback } from "./feedback.model";
+import { Model } from 'mongoose';
+import commonRepository from 'modules/common/common.repository';
+import { IFeedback } from './feedback.model';
 
 export default function feedbackRepository(model: Model<IFeedback>) {
-    return {
-        ...commonRepository(model),
-    }
+  return {
+    ...commonRepository(model),
+  };
 }

@@ -46,7 +46,6 @@ export const clerkWebhookHandler = async (req: Request, res: Response) => {
 
   try {
     switch (eventType) {
-
       case 'user.created': {
         const primaryEmail = extractPrimaryEmail(data);
 
@@ -74,7 +73,7 @@ export const clerkWebhookHandler = async (req: Request, res: Response) => {
               lastLoginAt: new Date(),
             },
           },
-          { upsert: true, new: true }
+          { upsert: true, new: true },
         );
 
         console.log(`[Webhook] User created: ${primaryEmail}`);
@@ -93,7 +92,7 @@ export const clerkWebhookHandler = async (req: Request, res: Response) => {
               avatar: data.image_url ?? undefined,
             },
           },
-          { new: true }
+          { new: true },
         );
 
         console.log(`[Webhook] User updated: ${data.id}`);
@@ -111,7 +110,6 @@ export const clerkWebhookHandler = async (req: Request, res: Response) => {
     }
 
     return res.status(200).json({ received: true });
-
   } catch (err: any) {
     console.error(`[Webhook] Error on event [${eventType}]:`, {
       message: err.message,
@@ -133,14 +131,14 @@ export const clerkWebhookHandler = async (req: Request, res: Response) => {
 const extractPrimaryEmail = (data: any): string | undefined => {
   // Method 1 — standard email signup
   const byId = data.email_addresses?.find(
-    (e: any) => e.id === data.primary_email_address_id
+    (e: any) => e.id === data.primary_email_address_id,
   )?.email_address;
 
   if (byId) return byId;
 
   // Method 2 — fallback to first verified email (OAuth signups)
   const firstVerified = data.email_addresses?.find(
-    (e: any) => e.verification?.status === 'verified'
+    (e: any) => e.verification?.status === 'verified',
   )?.email_address;
 
   if (firstVerified) return firstVerified;
