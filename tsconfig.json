@@ -22,7 +22,8 @@
       "@modules/campaign/*": ["modules/campaign/*"],
       "@modules/template/*": ["modules/template/*"],
       "@modules/feedback/*": ["modules/feedback/*"],
-      "@modules/user/*": ["modules/user/*"]
+      "@modules/user/*": ["modules/user/*"],
+      "@modules/common/*": ["modules/common/*"]
     }
   },
   "include": ["src"],

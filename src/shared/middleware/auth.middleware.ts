@@ -12,12 +12,14 @@ declare global {
 
 export const requireAuth = async (req: Request, res: Response, next: NextFunction) => {
   const { userId } = getAuth(req);
+  console.log('[requireAuth] userId:', userId);
 
   if (!userId) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
   const dbUser = await User.findOne({ externalUserId: userId });
+  console.log('[requireAuth] dbUser found:', !!dbUser);
 
   if (!dbUser) {
     return res.status(404).json({ error: 'User not found in database' });

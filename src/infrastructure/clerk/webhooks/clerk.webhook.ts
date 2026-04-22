@@ -125,31 +125,22 @@ export const clerkWebhookHandler = async (req: Request, res: Response) => {
   }
 };
 
-/**
- * Extracts primary email — handles both standard and OAuth signups
- */
 const extractPrimaryEmail = (data: any): string | undefined => {
-  // Method 1 — standard email signup
   const byId = data.email_addresses?.find(
     (e: any) => e.id === data.primary_email_address_id,
   )?.email_address;
 
   if (byId) return byId;
 
-  // Method 2 — fallback to first verified email (OAuth signups)
   const firstVerified = data.email_addresses?.find(
     (e: any) => e.verification?.status === 'verified',
   )?.email_address;
 
   if (firstVerified) return firstVerified;
 
-  // Method 3 — fallback to any email
   return data.email_addresses?.[0]?.email_address;
 };
 
-/**
- * Builds display name — handles missing first/last name (OAuth)
- */
 const buildName = (data: any): string => {
   const full = `${data.first_name ?? ''} ${data.last_name ?? ''}`.trim();
   if (full) return full;

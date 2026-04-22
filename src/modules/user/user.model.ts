@@ -5,8 +5,10 @@ export interface IUser extends Document {
   name: string;
   email: string;
   avatar?: string;
-  platformRole: 'SuperAdmin' | 'User';
+  platformRole: 'PlatformAdmin' | 'User';
   externalUserId: string;
+  adminAssignedAt?: Date;
+  adminAssignedBy?: string;
 }
 
 const userSchema = new Schema(
@@ -26,13 +28,21 @@ const userSchema = new Schema(
     },
     platformRole: {
       type: String,
-      enum: ['SuperAdmin', 'User'],
+      enum: ['PlatformAdmin', 'User'],
       required: true,
       default: 'User',
     },
     externalUserId: {
       type: String,
       required: true,
+    },
+    adminAssignedAt: {
+      type: Date,
+      required: false,
+    },
+    adminAssignedBy: {
+      type: String,
+      required: false,
     },
   },
   {

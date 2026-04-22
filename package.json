@@ -24,7 +24,8 @@
     "@modules/campaign": "src/modules/campaign",
     "@modules/template": "src/modules/template",
     "@modules/feedback": "src/modules/feedback",
-    "@modules/user": "src/modules/user"
+    "@modules/user": "src/modules/user",
+    "@modules/common": "src/modules/common"
   },
   "dependencies": {
     "@clerk/express": "^2.1.5",
